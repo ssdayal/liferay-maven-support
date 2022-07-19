@@ -3,8 +3,9 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''mvn archetype:generate 
-'''
+        sh 'sudo apt install maven'
+        sh 'sudo apt install default-jdk'
+        sh 'ls -l'
       }
     }
 
