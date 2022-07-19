@@ -3,8 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'mvn clean install -Dlicense.skip=true'
-        archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
+        sh 'mvn --version'
       }
     }
 
