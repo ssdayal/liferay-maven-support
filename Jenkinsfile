@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'sudo -i'
+        sh 'mvn --version'
       }
     }
 
