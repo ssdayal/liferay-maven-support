@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'ls -l'
+        sh '''mvn archetype:generate 
+'''
       }
     }
 
