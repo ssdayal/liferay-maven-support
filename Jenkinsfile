@@ -3,8 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh ' apt install maven'
-        sh ' apt install default-jdk'
+        sh 'apt install maven'
+        sh 'Â apt install default-jdk'
         sh 'ls -l'
       }
     }
