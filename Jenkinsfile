@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        build(job: 'mvn clean install', quietPeriod: 5)
+        sh 'rpm install'
       }
     }
 
