@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'mvn clean install -Dlicense.skip=true'
+        build(job: 'mvn clean install', quietPeriod: 5)
       }
     }
 
