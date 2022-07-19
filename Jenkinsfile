@@ -3,7 +3,8 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh '''apt install default-jdk
+        sh '''apt install default-jre
+apt install default-jdk
 wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz -P /tmp
 tar xf /tmp/apache-maven-*.tar.gz -C /opt
 ln -s /opt/apache-maven-3.8.4 /opt/maven
