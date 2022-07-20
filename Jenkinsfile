@@ -40,8 +40,7 @@ mvn -Dmaven.test.failure.ignore=true install
       steps {
         sh '''export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6/libexec # your Mavan home path
 export PATH=$PATH:$M2_HOME/bin
-
-mvn clean package -Dmaven.test.skip=true'''
+mvn package -Dmaven.test.skip=true'''
       }
     }
 
