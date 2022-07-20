@@ -24,22 +24,23 @@ ls -l'''
       }
     }
 
-    stage('Build') {
+    stage(' Pre Build') {
       steps {
         sh '''export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6/libexec # your Mavan home path
 export PATH=$PATH:$M2_HOME/bin
 mvn -Dmaven.test.failure.ignore=true install
+m
 
 '''
       }
     }
 
-    stage('post-build') {
+    stage('Build') {
       steps {
-        echo 'The build is completed successfully'
         sh '''export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6/libexec # your Mavan home path
 export PATH=$PATH:$M2_HOME/bin
-clean test'''
+mvn package'''
+        archiveArtifacts 'target/**/*.jar'
       }
     }
 
