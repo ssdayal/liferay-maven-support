@@ -44,5 +44,11 @@ mvn package -Dmaven.test.skip=true'''
       }
     }
 
+    stage('artifactory') {
+      steps {
+        archiveArtifacts(artifacts: 'target/*.jar', allowEmptyArchive: true, caseSensitive: true, defaultExcludes: true)
+      }
+    }
+
   }
 }
