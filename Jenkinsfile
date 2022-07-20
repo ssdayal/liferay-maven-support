@@ -44,7 +44,13 @@ mvn package -Dmaven.test.skip=true'''
       }
     }
 
-    stage('artifactory') {
+    stage('test') {
+      steps {
+        junit '**/surefire-reports/**/*.xml'
+      }
+    }
+
+    stage('artifaact') {
       steps {
         archiveArtifacts 'plugins/liferay-maven-plugin/target/*.jar'
       }
