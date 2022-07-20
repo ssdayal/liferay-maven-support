@@ -29,13 +29,17 @@ ls -l'''
         sh '''export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6/libexec # your Mavan home path
 export PATH=$PATH:$M2_HOME/bin
 mvn -Dmaven.test.failure.ignore=true install
-mvn clean install'''
+
+'''
       }
     }
 
     stage('post-build') {
       steps {
         echo 'The build is completed successfully'
+        sh '''export M2_HOME=/opt/homebrew/Cellar/maven/3.8.6/libexec # your Mavan home path
+export PATH=$PATH:$M2_HOME/bin
+clean test'''
       }
     }
 
