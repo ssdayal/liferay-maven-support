@@ -5,7 +5,7 @@ pipeline {
       agent any
       steps {
         sh '''
-java --version
+mvn -version
 '''
       }
     }
