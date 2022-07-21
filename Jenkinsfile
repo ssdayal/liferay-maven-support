@@ -31,5 +31,11 @@ mvn -Dmaven.test.failure.ignore=true install'''
       }
     }
 
+    stage('test') {
+      steps {
+        junit '**/surefire-reports/**/*.xml'
+      }
+    }
+
   }
 }
