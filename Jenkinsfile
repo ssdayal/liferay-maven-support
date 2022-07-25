@@ -39,7 +39,7 @@ mvn -Dmaven.test.failure.ignore=true install'''
 
     stage('artifact') {
       steps {
-        archiveArtifacts 'liferay-maven-support/target/*jar'
+        archiveArtifacts 'plugins/liferay-maven-plugin/target/*.jar'
       }
     }
 
