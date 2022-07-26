@@ -28,6 +28,7 @@ mvn -version'''
 export PATH=$PATH:$M2_HOME/bin
 
 mvn -Dmaven.test.failure.ignore=true install'''
+        input(message: 'Build ', ok: 'Yes')
       }
     }
 
