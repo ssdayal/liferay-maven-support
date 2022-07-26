@@ -43,7 +43,7 @@ mvn -Dmaven.test.failure.ignore=true install'''
       }
     }
 
-    stage('deploy ') {
+    stage('pre-deploy /pre-check') {
       steps {
         input(message: 'Deploy to stage', ok: 'Yes')
       }
